@@ -1,0 +1,356 @@
+body {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.03rem;
+  /* box-sizing: border-box; */
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --btn-coffee: #bf9376;
+  --bg-lightbrown: #EBDED5;
+  --bg-gray: #fafafa;
+  --bg-white: #ffffff;
+  --font-gray: #737373;
+  --font-black: #282828;
+  --font-lora: 'Lora', serif;
+
+}
+
+input {
+  border: 0;
+}
+
+input:not('#top-search') {
+  outline-color: var(--bg-lightbrown);
+}
+
+input:focus {
+  outline-style: solid;
+  outline-color: var(--bg-lightbrown);
+}
+
+/* hover變色 ------------------ */
+/* 黑轉淺棕 */
+.hover-coffee {
+  color: var(--font-black);
+  transition: color 0.2s linear 0s;
+}
+
+.hover-coffee:hover {
+  color: var(--btn-coffee);
+}
+
+/* 淺棕轉黑 */
+.hover-black {
+  color: var(--btn-coffee);
+  transition: color 0.2s linear 0s;
+}
+
+.hover-black:hover {
+  color: var(--font-black);
+}
+
+button {
+  background: var(--btn-coffee);
+  border: none;
+  color: white;
+  /* display: inline-block; */
+}
+
+.bg-wheat {
+  background-color: var(--bg-lightbrown);
+}
+
+/* navbar ------------------------------------------------------------------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  /* ↓ 在 chrome、firefox 的寬度會是父元素寬度 */
+  width: -webkit-fill-available;
+  width: -moz-fill-available;
+  margin: 0;
+  padding-left: 15px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* background-color: white; */
+  background-color: transparent;
+
+  /* opacity: 0.8; */
+
+  z-index: 10;
+}
+
+.nav-left {
+  display: flex;
+  flex-grow: 2;
+  align-items: center;
+}
+
+/* logo */
+.navbar img {
+  height: 35px;
+  margin: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.navbar ul {
+  display: flex;
+  /* font-size: 0; */
+}
+
+.navbar li {
+  display: inline-block;
+  font-weight: 700;
+
+  /* vertical-align: bottom; */
+  /* line-height: 0; */
+  margin: 0 10px;
+}
+
+.navbar a {
+  /* text-decoration: none; */
+  color: var(--font-black);
+  font-size: 0.5rem;
+  transition: color 0.2s linear 0s;
+}
+
+/* logo */
+.navbar a:first-child {
+  height: 35px;
+  /* transform: translate(0%, 8px); */
+}
+
+.navbar a:hover {
+  color: var(--btn-coffee);
+}
+
+.nav-right {
+  height: 100%;
+  flex-grow: 0;
+  /* justify-self: flex-end;
+  align-self: flex-end; */
+}
+
+.navbar input {
+  height: 100%;
+  box-sizing: border-box;
+  outline: none;
+  background: transparent;
+
+  color: var(--font-gray);
+  /* top: 0; */
+  position: relative;
+  /* 微調input:search偏移 */
+  transform: translate(3px, -5px);
+}
+
+.navbar input:focus {
+  background: var(--bg-gray);
+}
+
+.navbar button {
+  height: 100%;
+  width: 112px;
+  transition: background 0.2s linear 0s;
+  font-size: 30px;
+  /* background: ; */
+
+}
+
+.navbar button:hover {
+  background: black;
+}
+
+/* section01 大封面 ------------------------------------------------------------------------- */
+#section01 {
+  height: 920px;
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+}
+
+/* 標題 Essential Tips for Happiness and Productivity */
+#section01 .title {
+  position: absolute;
+  padding: 200px 0 280px 9%;
+  /* pointer-events: none; */
+}
+
+#section01 h1 {
+  font-family: var(--font-lora);
+  font-size: 5rem;
+  font-weight: 500;
+  line-height: 6rem;
+  margin: 0 0 60px 0;
+}
+
+.left {
+  background: var(--bg-lightbrown) url('../img/bg-intro.svg') no-repeat left bottom / 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-grow: 2;
+}
+
+.enter-and-subscribe {
+  width: 500px;
+  height: 55px;
+  display: flex;
+}
+
+/* 大封面的imput 輸入欄位 */
+.left input {
+  height: 100%;
+  width: 60%;
+  box-sizing: border-box;
+  padding: 4%;
+
+  flex-grow: 1;
+}
+
+/* 大封面的subscribe 按鈕 */
+.left button {
+  height: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 10px;
+  font-weight: 700;
+
+  line-height: 0;
+}
+
+.right {
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: flex-end; */
+  align-items: flex-end;
+  /* background-color: rosybrown; */
+}
+
+.menber-img {
+  width: 324px;
+  height: 426px;
+  overflow: hidden;
+  padding: 0;
+  background: url(../img/home-01-324x426.jpg) no-repeat center / 100%;
+  transition: background 0.2s linear 0s;
+}
+
+.menber-img:hover {
+  background-size: 102%;
+}
+
+.menber-img::before {
+  content: '';
+  position: absolute;
+  width: 324px;
+  height: 426px;
+  transition: background 0.2s linear 0s;
+}
+
+.menber-img:hover::before {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+
+/* 圖片左邊的兩個menber box */
+.menber-content {
+  width: 207px;
+  height: 426px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--font-gray);
+  /* align-items: flex-end; */
+}
+
+.box-checkout {
+  /* flex-grow: 1; */
+  background: var(--bg-white);
+  padding: 30px 15px;
+}
+
+.box-checkout p {
+  line-height: .5rem;
+  color: var(--font-black);
+}
+
+.box-name {
+  /* flex-grow: 1; */
+  background: var(--bg-lightbrown);
+  padding: 35px 15px 60px 15px;
+}
+
+.box-name a {
+  font-family: var(--font-lora);
+  font-size: 33px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: initial;
+}
+
+.box-name p {
+  line-height: 1.6rem;
+  margin: 8px 0;
+}
+
+
+
+@media (max-width:576px) {
+  .navbar {
+    height: 60px;
+    background: white;
+  }
+}
+
+
+/* 原網頁navbar 到 1200px後會切換狀態 */
+@media (max-width:1200px) {
+  .navbar {
+    height: 60px;
+    background: white;
+  }
+
+  .navbar button {
+    height: 40px;
+    width: 40px;
+    transition: background 0.2s linear 0s;
+    font-size: 24px;
+  }
+
+  .navbar button:hover {
+    background: var(--btn-coffee);
+  }
+
+  /* section01 */
+  /* .box-name {
+  } */
+
+  .box-name a {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width:992px) {
+  .navbar {
+    height: 60px;
+    background: white;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}

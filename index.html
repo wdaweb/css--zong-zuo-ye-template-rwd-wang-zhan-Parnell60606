@@ -87,23 +87,172 @@
   </div>
 
 
-  <!-- section02 -->
+  <!-- section02 最近的新聞(輪播) -->
   <div id="section02">
     <h2>Recent News</h2>
+    <!-- <hr> -->
+    <div class="carousel">
+      <div class="card">
+        <h2>April 27</h2>
+        <img src="./img/recent-news-01-423x324.jpg" alt="">
+        <div class="card-body">
+          <a href="#" class="hover-coffee">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</a>
+          <a href="#" id="explore" class="hover-black">EXPLORE</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>April 27</h2>
+        <img src="./img/recent-news-01-423x324.jpg" alt="">
+        <div class="card-body">
+          <a href="#" class="hover-coffee">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</a>
+          <a href="#" id="explore" class="hover-black">EXPLORE</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>April 27</h2>
+        <img src="./img/recent-news-01-423x324.jpg" alt="">
+        <div class="card-body">
+          <a href="#" class="hover-coffee">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</a>
+          <a href="#" id="explore" class="hover-black">EXPLORE</a>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- section03 -->
+  <!-- section03 受歡迎ㄉ新聞 --------------------------------------------------------------------------->
   <div id="section03">
-    <h2>Popular News</h2>
+    <div class="top">
+      <h2>Popular News</h2>
+      <p>From lifestyle tips to useful and simple recipes, my blog encompasses a wide variety of topics and
+        publications.
+        Here are the most popular ones.</p>
+    </div>
+    <div class="card2-grope">
+      <div class="card2">
+        <img src="./img/popular-news-01-370x257.jpg" alt="">
+        <div class="card2-body">
+          <div class="tag">INTERIOR</div>
+          <div class="card2-title">
+            <a href="#" class="hover-coffee">Decorating a Modern Bedroom on a Budget</a>
+          </div>
+          <div class="hr"></div>
+          <div class="card2-date">NOVEMBER 12, 2020</div>
+        </div>
+      </div>
+
+      <div class="card2">
+        <img src="./img/popular-news-02-370x257.jpg" alt="">
+        <div class="card2-body">
+          <div class="tag">RELATIONSHIPS</div>
+          <div class="card2-title">
+            <a href="#" class="hover-coffee">Top 10 Tips For Building Loving Relationships</a>
+          </div>
+          <div class="hr"></div>
+          <div class="card2-date">NOVEMBER 12, 2020</div>
+        </div>
+      </div>
+
+      <div class="card2">
+        <img src="./img/popular-news-03-370x257.jpg" alt="">
+        <div class="card2-body">
+          <div class="tag">LIFESTYLE</div>
+          <div class="card2-title">
+            <a href="#" class="hover-coffee">10 Useful Morning Habits to Start the Day Off Right</a>
+          </div>
+          <div class="hr"></div>
+          <div class="card2-date">NOVEMBER 12, 2020</div>
+        </div>
+      </div>
+
+      <div class="card2">
+        <img src="./img/popular-news-04-370x257.jpg" alt="">
+        <div class="card2-body">
+          <div class="tag">PURPOSE</div>
+          <div class="card2-title">
+            <a href="#" class="hover-coffee">Why You Should Plan Your Life on a Decade Level</a>
+          </div>
+          <div class="hr"></div>
+          <div class="card2-date">NOVEMBER 12, 2020</div>
+        </div>
+      </div>
+
+      <div class="card2">
+        <img src="./img/popular-news-05-370x257.jpg" alt="">
+        <div class="card2-body">
+          <div class="tag">FOOD</div>
+          <div class="card2-title">
+            <a href="#" class="hover-coffee">Summer Menus and Mood Setters for Hosting at Home</a>
+          </div>
+          <div class="hr"></div>
+          <div class="card2-date">NOVEMBER 12, 2020</div>
+        </div>
+      </div>
+
+      <div class="card2">
+        <img src="./img/popular-news-06-370x257.jpg" alt="">
+        <div class="card2-body">
+          <div class="tag">SPORTS</div>
+          <div class="card2-title">
+            <a href="#" class="hover-coffee">35 Home Workout Tips to Maximize Results</a>
+          </div>
+          <div class="hr"></div>
+          <div class="card2-date">NOVEMBER 12, 2020</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- section04 -->
+
+
+
+  <!-- section04 拿摸里手機app --------------------------------------------------------------------------->
   <div id="section04">
     <h2>Get Moli mobile app</h2>
+    <button>DOWNLOAD</button>
   </div>
 
-  <!-- foot -->
-  <div id="foot"></div>
+  <!-- section04 拿摸里手機app --------------------------------------------------------------------------->
+  <div id="section05">
+    <!-- <h3>Read Me on:</h3> -->
+  </div>
+
+  <!-- footer --------------------------------------------------------------------------->
+  <footer>
+    <img src="./img/logo-inverse-400x95.png" alt="logo-dark" id="logo-footer">
+  </footer>
+
+  <!-- 
+  <script>
+    /* 
+    別人的code
+    https://ithelp.ithome.com.tw/articles/10274568?sc=iThomeR
+     */
+
+    //選觀察對象, 我們觀察對象是section1
+    //當section1要消失的時候，就讓Nav bar換色好讓他在section2顏色更顯眼
+    const nav = document.querySelector('navbar');
+    const section1 = document.querySelector('.section01');
+
+    //當section1離開的時候就加上新的樣式
+    const changeColor = (entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+      })
+
+    }
+
+    //做一個新的觀察
+    let observer = new IntersectionObserver(changeColor, options);
+    //觀察對象section1
+    observer.observe(section1);
+  </script> -->
 </body>
 
 </html>
